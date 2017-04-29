@@ -14,16 +14,22 @@ class AlbumListVC: UITableViewController {
     fileprivate struct Constants {
         static let AlbumCellHeight: CGFloat = 80
     }
-    
-    var artist: Artist!
-    lazy var dataSource: AlbumListDataSource = {
-        return AlbumListDataSource(albums: self.artist.albums)
-    }()
+    let client = ItunesAPIClient()
+    var artist: Artist? {
+        didSet {
+            self.title = artist?.name
+            if let albums = artist?.albums {
+                dataSource.update(with: albums)
+                tableView.reloadData()
+            }
+        }
+    }
+    //MARK: HERE IS HOW INITIALIZE DATSOURCE!
+    var dataSource = AlbumListDataSource(albums: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
-        self.title = artist.name
     }
     
     private func setUpViews() {
@@ -42,9 +48,10 @@ extension AlbumListVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let albumDetailVC = AlbumDetailVC(style: .grouped)
-        let album = dataSource.getAlbum(from: indexPath)
-        album.songs = Stub.songs
-        albumDetailVC.album = album
+        let selectedAlbum = dataSource.getAlbum(from: indexPath)
+        client.lookUpAlbum(withID: selectedAlbum.id) { (album, error) in
+            albumDetailVC.album = album
+        }
         self.navigationController?.pushViewController(albumDetailVC, animated: true)
     }
 }

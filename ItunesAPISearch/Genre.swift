@@ -9,6 +9,7 @@
 import Foundation
 
 enum Genre: Int {
+    
     case blues = 2
     case comedy = 3
     case childrensMusic = 4

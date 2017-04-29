@@ -11,10 +11,15 @@ import UIKit
 
 class AlbumDetailVC: UITableViewController {
     
-    var album: Album?
-    lazy var dataSource: AlbumDetailDataSource = {
-        return AlbumDetailDataSource(songs: self.album!.songs)
-    }()
+    var album: Album? {
+        didSet {
+            if let album = album {
+                dataSource.update(with: album.songs)
+                tableView.reloadData()
+            }
+        }
+    }
+    var dataSource = AlbumDetailDataSource(songs: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()

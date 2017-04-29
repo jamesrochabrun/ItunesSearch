@@ -13,6 +13,7 @@ class SearchResultsVC: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     let dataSource = SearchResultsDataSource()
+    let client = ItunesAPIClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,16 @@ class SearchResultsVC: UITableViewController {
     }
 }
 
-//MARK: Search updates protocol
+//MARK: Search updates protocol "delegate" gets triggered every time 
 extension SearchResultsVC: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         
-        dataSource.update(with: [Stub.artist])
-        tableView.reloadData()
+//        dataSource.update(with: [Stub.artist])
+        client.searchForArtists(withTerm: searchController.searchBar.text!) { [weak self] (artists, error) in
+            self?.dataSource.update(with: artists)
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -52,8 +56,9 @@ extension SearchResultsVC {
        
         let albumListVC = AlbumListVC()
         let artist = dataSource.getArtist(from: indexPath)
-        albumListVC.artist = artist
-        artist.albums = Stub.albums
+        client.lookUpArtist(withID: artist.id) { (artist, error) in
+            albumListVC.artist = artist
+        }
         self.navigationController?.pushViewController(albumListVC, animated: true)
     }
 }
