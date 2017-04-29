@@ -56,7 +56,6 @@ extension SearchResultsVC {
         artist.albums = Stub.albums
         self.navigationController?.pushViewController(albumListVC, animated: true)
     }
-    
 }
 
 
