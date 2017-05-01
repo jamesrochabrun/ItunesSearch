@@ -25,7 +25,9 @@ class AlbumListVC: UITableViewController {
         }
     }
     //MARK: HERE IS HOW INITIALIZE DATSOURCE!
-    var dataSource = AlbumListDataSource(albums: [])
+    lazy var dataSource: AlbumListDataSource = {
+        return AlbumListDataSource(albums: [], tableView: self.tableView)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

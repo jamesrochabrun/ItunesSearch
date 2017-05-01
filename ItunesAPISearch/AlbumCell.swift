@@ -85,6 +85,7 @@ extension AlbumCell {
         genreLabel.text = viewModel.genre
         dateLabel.text = viewModel.releaseDate
         albumNameLabel.text = viewModel.title
+        albumImageView.image = viewModel.artwork
     }
 }
 

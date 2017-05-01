@@ -7,6 +7,15 @@
 //
 
 import Foundation
+import UIKit
+
+//modeling the state of the artwork download
+enum AlbumArtworkState {
+    
+    case placeholder
+    case downloaded
+    case failed
+}
 
 class Album {
     
@@ -20,6 +29,8 @@ class Album {
     let releaseDate: Date
     let primaryGenre: Genre
     var songs = [Song]()
+    var artwork: UIImage?
+    var artworkState = AlbumArtworkState.placeholder
     
     init(id: Int, artistName: String, name: String, censoredName: String, artWorkURL: String, isExplicit: Bool, numberOfTracks: Int,  releaseDate: Date, primaryGenre: Genre) {
         self.id = id
@@ -31,10 +42,8 @@ class Album {
         self.numberOfTracks = numberOfTracks
         self.releaseDate = releaseDate
         self.primaryGenre = primaryGenre
-       // self.songs = songs
     }
 }
-
 
 
 extension Album {
