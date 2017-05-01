@@ -56,6 +56,16 @@ extension AlbumListVC {
         }
         self.navigationController?.pushViewController(albumDetailVC, animated: true)
     }
+    
+    //MARK: INVESTIGATE MORE
+//    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        
+//        if let operation = dataSource.pendingOperations.downloadsInProgress[indexPath] {
+//            print("name: ", operation)
+//            operation.cancel()
+//            dataSource.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
+//        }
+//    }
 }
 
 

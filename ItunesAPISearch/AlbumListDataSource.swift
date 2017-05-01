@@ -59,6 +59,8 @@ extension AlbumListDataSource {
         }
         //2 operation does not exist lets create one
         let downloader = ArtworkDownloader(album: album)
+//        downloader.name = album.name
+//        print(downloader.name)
         
         //3 when operation is complete...
         //operatio has a setter property called completionBlock that gets triggered after operation is completed
