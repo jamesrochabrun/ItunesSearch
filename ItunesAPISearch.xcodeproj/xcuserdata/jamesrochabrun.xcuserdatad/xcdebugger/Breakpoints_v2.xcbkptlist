@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "DBCECCBF-A62E-4E6A-84EA-66945FFF77AA"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8B664DB-FC30-4F2B-BA2F-A095C40514B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItunesAPISearch/ItunesAPIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "lookUpArtist(withID:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61DE8E7E-9B91-4137-8FFC-D618087D82D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ItunesAPISearch/ItunesAPIClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "searchForArtists(withTerm:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61DE8E7E-9B91-4137-8FFC-D618087D82D6 - f4c414f4d023aa61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;&gt;, Swift.Optional&lt;ItunesAPISearch.ItunesError&gt;) -&gt; () in ItunesAPISearch.ItunesAPIClient.searchForArtists(withTerm: Swift.String, completion: (Swift.Array&lt;ItunesAPISearch.Artist&gt;, Swift.Optional&lt;ItunesAPISearch.ItunesError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ItunesAPISearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesrochabrun/Desktop/git/ItunesSearch/ItunesAPISearch/ItunesAPIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "330">
+               </Location>
+               <Location
+                  uuid = "61DE8E7E-9B91-4137-8FFC-D618087D82D6 - a1053e091022a838"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Any&gt;) -&gt; Swift.Optional&lt;ItunesAPISearch.Artist&gt; in closure #1 (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;&gt;, Swift.Optional&lt;ItunesAPISearch.ItunesError&gt;) -&gt; () in ItunesAPISearch.ItunesAPIClient.searchForArtists(withTerm: Swift.String, completion: (Swift.Array&lt;ItunesAPISearch.Artist&gt;, Swift.Optional&lt;ItunesAPISearch.ItunesError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "ItunesAPISearch"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jamesrochabrun/Desktop/git/ItunesSearch/ItunesAPISearch/ItunesAPIClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
